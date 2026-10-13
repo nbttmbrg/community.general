@@ -28,7 +28,7 @@ options:
         version_added: 1.0.0
     default: localhost
   port:
-    description: Port on which Logstash is listening. Used with all C(protocol) choices.
+    description: Port on which Logstash is listening. Used with all O(protocol) choices.
     type: int
     env:
       - name: LOGSTASH_PORT
@@ -54,7 +54,7 @@ options:
   http_path:
     description: >-
       HTTP request path, for example when sending events through a reverse proxy. This option is used only with
-      C(protocol=http) or C(protocol=https).
+      O(protocol=http) or O(protocol=https).
     type: str
     env:
       - name: LOGSTASH_HTTP_PATH
@@ -65,8 +65,8 @@ options:
     version_added: '11.5.0'
   username:
     description: >-
-      Username for HTTP Basic authentication. This option is used only with C(protocol=http) or C(protocol=https),
-      and must be set together with C(password).
+      Username for HTTP Basic authentication. This option is used only with O(protocol=http) or O(protocol=https),
+      and must be set together with O(password).
     type: str
     env:
       - name: LOGSTASH_USERNAME
@@ -76,8 +76,8 @@ options:
     version_added: '11.5.0'
   password:
     description: >-
-      Password for HTTP Basic authentication. This option is used only with C(protocol=http) or C(protocol=https),
-      and must be set together with C(username). Use HTTPS to protect credentials and events in transit.
+      Password for HTTP Basic authentication. This option is used only with O(protocol=http) or O(protocol=https),
+      and must be set together with O(username). Use HTTPS to protect credentials and events in transit.
     type: str
     secret: true
     env:
@@ -87,7 +87,7 @@ options:
         key: password
     version_added: '11.5.0'
   validate_certs:
-    description: Whether to validate the TLS certificate of the Logstash server. This option is used only with C(protocol=https).
+    description: Whether to validate the TLS certificate of the Logstash server. This option is used only with O(protocol=https).
     type: bool
     default: true
     env:
@@ -97,7 +97,7 @@ options:
         key: validate_certs
     version_added: '11.5.0'
   ca_path:
-    description: PEM-formatted file containing the CA certificate used to validate the Logstash server. This option is used only with C(protocol=https).
+    description: PEM-formatted file containing the CA certificate used to validate the Logstash server. This option is used only with O(protocol=https).
     type: path
     env:
       - name: LOGSTASH_CA_PATH
@@ -106,7 +106,7 @@ options:
         key: ca_path
     version_added: '11.5.0'
   client_cert:
-    description: PEM-formatted certificate chain file for TLS client authentication. This option is used only with C(protocol=https).
+    description: PEM-formatted certificate chain file for TLS client authentication. This option is used only with O(protocol=https).
     type: path
     env:
       - name: LOGSTASH_CLIENT_CERT
@@ -116,8 +116,8 @@ options:
     version_added: '11.5.0'
   client_key:
     description: >-
-      PEM-formatted private key file for TLS client authentication. The key can also be included in C(client_cert).
-      This option is used only with C(protocol=https).
+      PEM-formatted private key file for TLS client authentication. The key can also be included in O(client_cert).
+      This option is used only with O(protocol=https).
     type: path
     env:
       - name: LOGSTASH_CLIENT_KEY
@@ -126,7 +126,7 @@ options:
         key: client_key
     version_added: '11.5.0'
   timeout:
-    description: Maximum time in seconds to wait for an HTTP request to complete. This option is used only with C(protocol=http) or C(protocol=https).
+    description: Maximum time in seconds to wait for an HTTP request to complete. This option is used only with O(protocol=http) or O(protocol=https).
     type: int
     default: 10
     env:
@@ -138,7 +138,7 @@ options:
   retries:
     description: >-
       Number of retries for HTTP 429 (Too Many Requests) responses. Uses exponential backoff with jitter between attempts. This
-      option is used only with C(protocol=http) or C(protocol=https).
+      option is used only with O(protocol=http) or O(protocol=https).
     type: int
     default: 3
     env:
@@ -148,7 +148,7 @@ options:
         key: retries
     version_added: '11.5.0'
   type:
-    description: Message type. Used with all C(protocol) choices.
+    description: Message type. Used with all O(protocol) choices.
     type: str
     env:
       - name: LOGSTASH_TYPE
@@ -158,7 +158,7 @@ options:
         version_added: 1.0.0
     default: ansible
   pre_command:
-    description: Executes command before run and adds its result to the C(ansible_pre_command_output) Logstash field. Used with all C(protocol) choices.
+    description: Executes command before run and adds its result to the C(ansible_pre_command_output) Logstash field. Used with all O(protocol) choices.
     type: str
     version_added: 2.0.0
     ini:
@@ -167,7 +167,7 @@ options:
     env:
       - name: LOGSTASH_PRE_COMMAND
   format_version:
-    description: Logging format. Used with all C(protocol) choices.
+    description: Logging format. Used with all O(protocol) choices.
     type: str
     version_added: 2.0.0
     ini:
