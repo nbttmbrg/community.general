@@ -23,14 +23,14 @@ options:
     env:
       - name: LOGSTASH_SERVER
       - name: ANSIBLE_CALLBACK_LOGSTASH_SERVER
-        version_added: '11.5.0'
+        version_added: 11.5.0
     ini:
       - section: callback_logstash
         key: server
         version_added: 1.0.0
     vars:
       - name: ansible_callback_logstash_server
-        version_added: '11.5.0'
+        version_added: 11.5.0
     default: localhost
   port:
     description: Port on which Logstash is listening. Used with all O(protocol) choices.
@@ -38,14 +38,14 @@ options:
     env:
       - name: LOGSTASH_PORT
       - name: ANSIBLE_CALLBACK_LOGSTASH_PORT
-        version_added: '11.5.0'
+        version_added: 11.5.0
     ini:
       - section: callback_logstash
         key: port
         version_added: 1.0.0
     vars:
       - name: ansible_callback_logstash_port
-        version_added: '11.5.0'
+        version_added: 11.5.0
     default: 5000
   protocol:
     description: Transport protocol to use when sending events to Logstash.
@@ -62,7 +62,7 @@ options:
     vars:
       - name: ansible_callback_logstash_protocol
     default: tcp
-    version_added: '11.5.0'
+    version_added: 11.5.0
   http_path:
     description: >-
       HTTP request path, for example when sending events through a reverse proxy. This option is used only with
@@ -76,7 +76,7 @@ options:
     vars:
       - name: ansible_callback_logstash_http_path
     default: /
-    version_added: '11.5.0'
+    version_added: 11.5.0
   username:
     description: >-
       Username for HTTP Basic authentication. This option is used only with O(protocol=http) or O(protocol=https),
@@ -89,7 +89,7 @@ options:
         key: username
     vars:
       - name: ansible_callback_logstash_username
-    version_added: '11.5.0'
+    version_added: 11.5.0
   password:
     description: >-
       Password for HTTP Basic authentication. This option is used only with O(protocol=http) or O(protocol=https),
@@ -103,7 +103,7 @@ options:
         key: password
     vars:
       - name: ansible_callback_logstash_password
-    version_added: '11.5.0'
+    version_added: 11.5.0
   validate_certs:
     description: Whether to validate the TLS certificate of the Logstash server. This option is used only with O(protocol=https).
     type: bool
@@ -115,7 +115,7 @@ options:
         key: validate_certs
     vars:
       - name: ansible_callback_logstash_validate_certs
-    version_added: '11.5.0'
+    version_added: 11.5.0
   ca_path:
     description: PEM-formatted file containing the CA certificate used to validate the Logstash server. This option is used only with O(protocol=https).
     type: path
@@ -126,7 +126,7 @@ options:
         key: ca_path
     vars:
       - name: ansible_callback_logstash_ca_path
-    version_added: '11.5.0'
+    version_added: 11.5.0
   client_cert:
     description: PEM-formatted certificate chain file for TLS client authentication. This option is used only with O(protocol=https).
     type: path
@@ -137,7 +137,7 @@ options:
         key: client_cert
     vars:
       - name: ansible_callback_logstash_client_cert
-    version_added: '11.5.0'
+    version_added: 11.5.0
   client_key:
     description: >-
       PEM-formatted private key file for TLS client authentication. The key can also be included in O(client_cert).
@@ -150,7 +150,7 @@ options:
         key: client_key
     vars:
       - name: ansible_callback_logstash_client_key
-    version_added: '11.5.0'
+    version_added: 11.5.0
   timeout:
     description: Maximum time in seconds to wait for an HTTP request to complete. This option is used only with O(protocol=http) or O(protocol=https).
     type: int
@@ -162,7 +162,7 @@ options:
         key: timeout
     vars:
       - name: ansible_callback_logstash_timeout
-    version_added: '11.5.0'
+    version_added: 11.5.0
   retries:
     description: >-
       Number of retries for HTTP 429 (Too Many Requests) responses. Uses exponential backoff with jitter between attempts. This
@@ -176,21 +176,21 @@ options:
         key: retries
     vars:
       - name: ansible_callback_logstash_retries
-    version_added: '11.5.0'
+    version_added: 11.5.0
   type:
     description: Message type. Used with all O(protocol) choices.
     type: str
     env:
       - name: LOGSTASH_TYPE
       - name: ANSIBLE_CALLBACK_LOGSTASH_TYPE
-        version_added: '11.5.0'
+        version_added: 11.5.0
     ini:
       - section: callback_logstash
         key: type
         version_added: 1.0.0
     vars:
       - name: ansible_callback_logstash_type
-        version_added: '11.5.0'
+        version_added: 11.5.0
     default: ansible
   pre_command:
     description: Executes command before run and adds its result to the C(ansible_pre_command_output) Logstash field. Used with all O(protocol) choices.
@@ -202,10 +202,10 @@ options:
     env:
       - name: LOGSTASH_PRE_COMMAND
       - name: ANSIBLE_CALLBACK_LOGSTASH_PRE_COMMAND
-        version_added: '11.5.0'
+        version_added: 11.5.0
     vars:
       - name: ansible_callback_logstash_pre_command
-        version_added: '11.5.0'
+        version_added: 11.5.0
   format_version:
     description: Logging format. Used with all O(protocol) choices.
     type: str
@@ -216,10 +216,10 @@ options:
     env:
       - name: LOGSTASH_FORMAT_VERSION
       - name: ANSIBLE_CALLBACK_LOGSTASH_FORMAT_VERSION
-        version_added: '11.5.0'
+        version_added: 11.5.0
     vars:
       - name: ansible_callback_logstash_format_version
-        version_added: '11.5.0'
+        version_added: 11.5.0
     default: v1
     choices:
       - v1
