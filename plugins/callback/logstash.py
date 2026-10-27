@@ -423,6 +423,10 @@ class CallbackModule(CallbackBase):
                 if not path.startswith("/"):
                     path = f"/{path}"
                 url = f"{self.ls_protocol}://{server}:{self.ls_port}{path}"
+                self._display.warning(
+                    f"DEBUG logstash http target url={url!r} username={self.ls_username!r} "
+                    f"password_set={bool(self.ls_password)} password_len={len(self.ls_password or '')}"
+                )
                 formatter = LogstashFormatterVersion1(message_type=self.ls_type)
                 self.handler = LogstashHTTPHandler(
                     url=url,
