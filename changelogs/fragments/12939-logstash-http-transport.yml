@@ -1,3 +1,4 @@
 minor_changes:
   - logstash callback plugin - add support for sending events over HTTP(S), with Basic authentication and TLS client certificate options (https://github.com/ansible-collections/community.general/issues/12897, https://github.com/ansible-collections/community.general/pull/12939).
   - logstash callback plugin - add ``ANSIBLE_CALLBACK_LOGSTASH_`` prefixed environment variables and Ansible variables for all options (https://github.com/ansible-collections/community.general/pull/12939).
+  - logstash callback plugin - add ``LOGSTASH_USERNAME`` and ``LOGSTASH_PASSWORD`` environment variables as non-``ANSIBLE_``-prefixed aliases for the ``username`` and ``password`` options, for use with tools such as automation controller/AWX credential injectors that disallow environment variable names starting with ``ANSIBLE_`` (https://github.com/ansible-collections/community.general/pull/12939).

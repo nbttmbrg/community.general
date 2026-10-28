@@ -83,6 +83,7 @@ options:
       and must be set together with O(password).
     type: str
     env:
+      - name: LOGSTASH_USERNAME
       - name: ANSIBLE_CALLBACK_LOGSTASH_USERNAME
     ini:
       - section: callback_logstash
@@ -97,6 +98,7 @@ options:
     type: str
     secret: true
     env:
+      - name: LOGSTASH_PASSWORD
       - name: ANSIBLE_CALLBACK_LOGSTASH_PASSWORD
     ini:
       - section: callback_logstash
@@ -240,7 +242,10 @@ ansible.cfg: |
       type = ansible
 
 ansible.cfg (HTTPS with Basic authentication): |
-  # Store the password in ANSIBLE_CALLBACK_LOGSTASH_PASSWORD or a secrets manager, not in this file
+  # Store the password in LOGSTASH_PASSWORD (or ANSIBLE_CALLBACK_LOGSTASH_PASSWORD) or a secrets manager, not in this file.
+  # LOGSTASH_USERNAME/LOGSTASH_PASSWORD are useful when the ANSIBLE_ prefix cannot be used, for example when
+  # injecting credentials through an automation controller/AWX credential type, which disallows environment
+  # variable names starting with ANSIBLE_.
   [defaults]
       callbacks_enabled = community.general.logstash
 
